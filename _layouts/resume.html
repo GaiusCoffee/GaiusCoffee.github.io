@@ -1,231 +1,238 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+    {% include head.html %}
 
-  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+    <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
 
-    <div class="wrapper">
+        <a href="https://github.com/GaiusCoffee/resume">
+            <img style="position: absolute; top: 0; right: 0; border: 0;" 
+                 src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" 
+                 alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+        </a>
 
-      <header class="page-header">
 
-        {% if site.resume_avatar == 'true' %}
-        <img src="images/avatar.jpg" alt="my photo" class="avatar">
-        {% endif %}
+        <div class="wrapper">
 
-        <h1 class="header-name">{{ site.resume_name }}</h1>
+            <header class="page-header">
 
-        <div class="title-bar">
+                {% if site.resume_avatar == 'true' %}
+                <img src="images/avatar.jpg" alt="my photo" class="avatar">
+                {% endif %}
 
-          <h2 class="header-title">{{ site.resume_title }}</h2>
+                <h1 class="header-name">{{ site.resume_name }}</h1>
 
-          {% include icon-links.html %}
+                <div class="title-bar">
+
+                    <h2 class="header-title">{{ site.resume_title }}</h2>
+
+                    {% include icon-links.html %}
+                </div>
+
+                <div class="executive-summary">
+                    <p>I'm an avid board gamer and dungeon master who's also a software developer.</p>
+                    <p>I specialize in Web APIs, both in usage and in their creation (via node.js and C#/ASP.NET). I'm also adept at managing developer productivity through metrics tracking, analytics and reporting.</p>
+                </div>
+
+                {% if site.resume_looking_for_work == 'yes' %}
+                <a href="mailto:{{ site.resume_contact_email }}" class="contact-button">Contact me</a>
+                {% elsif site.resume_looking_for_work == 'no' %}
+                <a class="contact-button not-looking">I'm not looking for work right now.</a>
+                {% else %}
+                {% endif %}
+
+            </header>
+
+            <!-- begin Experience -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Experience</h2>
+                </header>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Resorts World Manila</h3>
+                    <h4 class="resume-item-details">Senior Software Developer &bull; Jan, 2012 &mdash; Present</h4>
+                    <p class="resume-item-copy">Design and development of several applications, including (but not limited to):</p>
+                    <ul class="resume-item-list">
+                        <li><b>Common</b>, A developer library that standized the authentication, configuration and logging of the company's internal applications</li>
+                        <li><b>Phoenix</b>, RWManila's public facing API that powers the company's websites, mobile applications and other internal applications</li>
+                        <li><b>Basilisk</b>, RWManila's internal mobile android application that allows merchants to swipe and deduct from RWM's member cards</li>
+                    </ul>
+                    <p class="resume-item-copy">I also pioneered the use of agile methodologies (via Atlassian's Jira and Stash, as well as Visual Studio Online) in order to measure and improve the productivity of the software development team.</p>
+
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Isuzu Automotive Dealership, Inc.</h3>
+                    <h4 class="resume-item-details">Systems Analyst / Programmer &bull; Jun, 2010 &mdash; Dec, 2011</h4>
+
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Colegio de San Juan de Letran, Calamba</h3>
+                    <h4 class="resume-item-details">Full-time ICST Faculty &bull; Jun, 2009 &mdash; Mar, 2010</h4>
+
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Nittetsu Micrometal Corporation, Philippines</h3>
+                    <h4 class="resume-item-details">Systems Programmer &bull; Aug, 2008 &mdash; Feb, 2009</h4>
+
+                </div>
+
+            </section>
+            <!-- end Experience -->
+
+            {% if site.resume_section_education %}
+            <!-- begin Education -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Education</h2>
+                </header>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Springfield College</h3>
+                    <h4 class="resume-item-details">Associates Degree, Business Management &bull; 1984 &mdash; 1986</h4>
+                    <p class="resume-item-copy">If you had any meaningful roles at college, feel free to write about them here.</p>
+                </div>
+
+            </section>
+            <!-- end Education -->
+            {% endif %}
+
+            {% if site.resume_section_projects %}
+            <!-- begin Projects -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Projects</h2>
+                </header>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title"><a href="http://donutlocator.io">donutfinder.io</a></h3>
+                    <h4 class="resume-item-details">Founder & Primary Developer &bull; 2012 &mdash; Present</h4>
+                    <p class="resume-item-copy">Donut Locator is an open source node/ember app that lets users find donuts within a defined radius from their home.</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Springfield Donut Eater's User Group</h3>
+                    <h4 class="resume-item-details">Co-Founder & Organizer &bull; 2007 &mdash; Present</h4>
+                    <p class="resume-item-copy">DEUG is a local monthly meetup in Springfield where we share all the latest tips and tricks for dat donut lifestyle. I organize the group, and typically eat most of the donuts.</p>
+                </div>
+
+            </section>
+            <!-- end Projects -->
+            {% endif %}
+
+            {% if site.resume_section_skills %}
+            <!-- begin Skills -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Skills</h2>
+                </header>
+
+                <div class="resume-item">
+                    <h4 class="resume-item-details">Donut design</h4>
+                    <p class="resume-item-copy">Sprinkle art, icing design, eclair management, taste testing, donut/coffee pairing research</p>
+                </div>
+
+                <div class="resume-item">
+                    <h4 class="resume-item-details">Craft beer brewing</h4>
+                    <p class="resume-item-copy">Hops inspection, brew testing, distribution management, bottle label design, festival and event management</p>
+                </div>
+
+                <div class="resume-item">
+                    <h4 class="resume-item-details">Family leadership</h4>
+                    <p class="resume-item-copy">Bread winning, conflict resolution, couch inspection, TV longevity testing</p>
+                </div>
+
+            </section>
+            <!-- end Skills -->
+            {% endif %}
+
+            {% if site.resume_section_recognition %}
+            <!-- begin Recognition -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Recognition</h2>
+                </header>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Springfield Nuclear Power Plant</h3>
+                    <h4 class="resume-item-details">Outstanding Achievement &bull; 2010</h4>
+                    <p class="resume-item-copy">Awarded for stopping a nuclear meltdown, even though I also started it.</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Duff Beer Customer of the year</h3>
+                    <h4 class="resume-item-details">1997 &mdash; 2001, 2003, 2008 &mdash; 2012</h4>
+                    <p class="resume-item-copy">Honored by <a href="https://en.wikipedia.org/wiki/Duff_Beer">Duff Beer</a> for being an outstanding customer several years straight. Qualifications included most beer consumed at a bar, most beer purchased, and most beer ralphed.</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Moe's Patron of the Month</h3>
+                    <h4 class="resume-item-details">12/2001, 8/2004</h4>
+                    <p class="resume-item-copy">Specifically this prestigious awarded twice for stopping a robber with my belly.</p>
+                </div>
+
+            </section>
+            <!-- end Recognition -->
+            {% endif %}
+
+            {% if site.resume_section_associations %}
+            <!-- begin Associations -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Associations</h2>
+                </header>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title"><a href="http://beerfortheworld.com">Beer for the World</a></h3>
+                    <h4 class="resume-item-details">Volunteer &bull; 2008 &mdash; Present</h4>
+                    <p class="resume-item-copy">Organized fund drives and participated in fundraising events for the benefit of families in third world countries without proper access to malt beverages.</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3 class="resume-item-title">Springfield Nuclear Workers Labor Union</h3>
+                    <h4 class="resume-item-details">Member in Good Standin &bull; 1994 &mdash; Present</h4>
+                    <p class="resume-item-copy">Founding member of the local nuclear workers labor union.</p>
+                </div>
+
+            </section>
+            <!-- end Recognition -->
+            {% endif %}
+
+            {% if site.resume_section_links %}
+            <!-- begin Links -->
+            <section class="content-section">
+
+                <header class="section-header">
+                    <h2>Additional Links</h2>
+                </header>
+
+                <div class="resume-item">
+                    <ul class="resume-item-list">
+                        <li><a href="#">Springfield Poker Club</a></li>
+                        <li><a href="#">Springfield Donut Eater's User Group</a></li>
+                    </ul>
+                </div>
+
+            </section>
+            <!-- end Links -->
+            {% endif %}
+
+            <footer class="page-footer">
+                <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork me on <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
+                <p class="footer-line">moveForward(100); // Hello, World! <a href="https://keybase.io/gaius"><img src="images/hacker.png" alt="hacker emblem"/></a></p>
+            </footer>
+
         </div>
 
-        <div class="executive-summary">
-            <p>I'm an avid board gamer and dungeon master who's also a software developer.</p>
-            <p>I specialize in Web APIs, both in usage and in their creation (via node.js and C#/ASP.NET). I'm also adept at managing developer productivity through metrics tracking, analytics and reporting.</p>
-        </div>
-
-        {% if site.resume_looking_for_work == 'yes' %}
-        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button">Contact me</a>
-        {% elsif site.resume_looking_for_work == 'no' %}
-        <a class="contact-button not-looking">I'm not looking for work right now.</a>
-        {% else %}
-        {% endif %}
-
-      </header>
-
-      <!-- begin Experience -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Experience</h2>
-        </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Resorts World Manila</h3>
-          <h4 class="resume-item-details">Senior Software Developer &bull; Jan, 2012 &mdash; Present</h4>
-          <p class="resume-item-copy">Design and development of several applications, including (but not limited to):</p>
-          <ul class="resume-item-list">
-            <li><b>Common</b>, A developer library that standized the authentication, configuration and logging of the company's internal applications</li>
-            <li><b>Phoenix</b>, RWManila's public facing API that powers the company's websites, mobile applications and other internal applications</li>
-            <li><b>Basilisk</b>, RWManila's internal mobile android application that allows merchants to swipe and deduct from RWM's member cards</li>
-          </ul>
-          <p class="resume-item-copy">I also pioneered the use of agile methodologies (via Atlassian's Jira and Stash, as well as Visual Studio Online) in order to measure and improve the productivity of the software development team.</p>
-
-        </div>
-          
-        <div class="resume-item">
-          <h3 class="resume-item-title">Isuzu Automotive Dealership, Inc.</h3>
-          <h4 class="resume-item-details">Systems Analyst / Programmer &bull; Jun, 2010 &mdash; Dec, 2011</h4>
-          
-        </div>
-          
-        <div class="resume-item">
-          <h3 class="resume-item-title">Colegio de San Juan de Letran, Calamba</h3>
-          <h4 class="resume-item-details">Full-time ICST Faculty &bull; Jun, 2009 &mdash; Mar, 2010</h4>
-          
-        </div>
-          
-        <div class="resume-item">
-          <h3 class="resume-item-title">Nittetsu Micrometal Corporation, Philippines</h3>
-          <h4 class="resume-item-details">Systems Programmer &bull; Aug, 2008 &mdash; Feb, 2009</h4>
-          
-        </div>
-
-      </section>
-      <!-- end Experience -->
-
-      {% if site.resume_section_education %}
-      <!-- begin Education -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Education</h2>
-        </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Springfield College</h3>
-          <h4 class="resume-item-details">Associates Degree, Business Management &bull; 1984 &mdash; 1986</h4>
-          <p class="resume-item-copy">If you had any meaningful roles at college, feel free to write about them here.</p>
-        </div>
-
-      </section>
-      <!-- end Education -->
-      {% endif %}
-
-      {% if site.resume_section_projects %}
-      <!-- begin Projects -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Projects</h2>
-        </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title"><a href="http://donutlocator.io">donutfinder.io</a></h3>
-          <h4 class="resume-item-details">Founder & Primary Developer &bull; 2012 &mdash; Present</h4>
-          <p class="resume-item-copy">Donut Locator is an open source node/ember app that lets users find donuts within a defined radius from their home.</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Springfield Donut Eater's User Group</h3>
-          <h4 class="resume-item-details">Co-Founder & Organizer &bull; 2007 &mdash; Present</h4>
-          <p class="resume-item-copy">DEUG is a local monthly meetup in Springfield where we share all the latest tips and tricks for dat donut lifestyle. I organize the group, and typically eat most of the donuts.</p>
-        </div>
-
-      </section>
-      <!-- end Projects -->
-      {% endif %}
-
-      {% if site.resume_section_skills %}
-      <!-- begin Skills -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Skills</h2>
-        </header>
-
-        <div class="resume-item">
-          <h4 class="resume-item-details">Donut design</h4>
-          <p class="resume-item-copy">Sprinkle art, icing design, eclair management, taste testing, donut/coffee pairing research</p>
-        </div>
-
-        <div class="resume-item">
-          <h4 class="resume-item-details">Craft beer brewing</h4>
-          <p class="resume-item-copy">Hops inspection, brew testing, distribution management, bottle label design, festival and event management</p>
-        </div>
-
-        <div class="resume-item">
-          <h4 class="resume-item-details">Family leadership</h4>
-          <p class="resume-item-copy">Bread winning, conflict resolution, couch inspection, TV longevity testing</p>
-        </div>
-
-      </section>
-      <!-- end Skills -->
-      {% endif %}
-
-      {% if site.resume_section_recognition %}
-      <!-- begin Recognition -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Recognition</h2>
-        </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Springfield Nuclear Power Plant</h3>
-          <h4 class="resume-item-details">Outstanding Achievement &bull; 2010</h4>
-          <p class="resume-item-copy">Awarded for stopping a nuclear meltdown, even though I also started it.</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Duff Beer Customer of the year</h3>
-          <h4 class="resume-item-details">1997 &mdash; 2001, 2003, 2008 &mdash; 2012</h4>
-          <p class="resume-item-copy">Honored by <a href="https://en.wikipedia.org/wiki/Duff_Beer">Duff Beer</a> for being an outstanding customer several years straight. Qualifications included most beer consumed at a bar, most beer purchased, and most beer ralphed.</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Moe's Patron of the Month</h3>
-          <h4 class="resume-item-details">12/2001, 8/2004</h4>
-          <p class="resume-item-copy">Specifically this prestigious awarded twice for stopping a robber with my belly.</p>
-        </div>
-
-      </section>
-      <!-- end Recognition -->
-      {% endif %}
-
-      {% if site.resume_section_associations %}
-      <!-- begin Associations -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Associations</h2>
-        </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title"><a href="http://beerfortheworld.com">Beer for the World</a></h3>
-          <h4 class="resume-item-details">Volunteer &bull; 2008 &mdash; Present</h4>
-          <p class="resume-item-copy">Organized fund drives and participated in fundraising events for the benefit of families in third world countries without proper access to malt beverages.</p>
-        </div>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Springfield Nuclear Workers Labor Union</h3>
-          <h4 class="resume-item-details">Member in Good Standin &bull; 1994 &mdash; Present</h4>
-          <p class="resume-item-copy">Founding member of the local nuclear workers labor union.</p>
-        </div>
-
-      </section>
-      <!-- end Recognition -->
-      {% endif %}
-
-      {% if site.resume_section_links %}
-      <!-- begin Links -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Additional Links</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            <li><a href="#">Springfield Poker Club</a></li>
-            <li><a href="#">Springfield Donut Eater's User Group</a></li>
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Links -->
-      {% endif %}
-
-      <footer class="page-footer">
-        <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork me on <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
-        <p class="footer-line">moveForward(100); // Hello, World! <a href="https://keybase.io/gaius"><img src="images/hacker.png" alt="hacker emblem"/></a></p>
-      </footer>
-
-    </div>
-
-  </body>
+    </body>
 
 </html>
